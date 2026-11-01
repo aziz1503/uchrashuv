@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="body" >
+        <br><br><br><br>
+        <h1 > Men bilan Uchrashasanmi </h1> <br><br><br>
+        <button class="ha">Ha</button>
+        <button class="yoq" id="yoq">Yoq</button>
+    </div>
+
+ <script>
+        const yoq = document.getElementById("yoq");
+
+        yoq.addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
+            const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
+
+            yoq.style.position = "fixed";
+            yoq.style.left = x + "px";
+            yoq.style.top = y + "px";
+        });
+    </script>
+
+</body>
+</html>
