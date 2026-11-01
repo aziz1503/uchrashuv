@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div class="body" >
+    <div class="body">
         <br><br><br><br>
-        <h1 > Men bilan Uchrashasanmi </h1> <br><br><br>
-        <button class="ha">Ha</button>
-        <button class="yoq" id="yoq">Yoq</button>
+        <h1> Men bilan Uchrashasanmi </h1> <br><br><br>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdyC88Bwh8fCbevQpsTduHya6kHFoopMuBHAedJcpGCgzdTng/viewform">
+   <button class="ha">Ha</button>
+</a>
+         <button class="yoq" id="yoq">Yoq</button>
+
     </div>
 
-<script>
-    const yoq = document.getElementById("yoq");
+    <script>
+        const yoq = document.getElementById("yoq");
 
-    function qoch() {
-        const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
-        const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
+        yoq.addEventListener("mouseover", function () {
 
-        yoq.style.position = "fixed";
-        yoq.style.left = x + "px";
-        yoq.style.top = y + "px";
-    }
+            const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
+            const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
 
-    yoq.addEventListener("pointerdown", function(e) {
-        if (e.pointerType === "touch") {
-            e.preventDefault();
-            qoch();
-        }
-    });
-
-    yoq.addEventListener("pointerenter", function(e) {
-        if (e.pointerType === "mouse") {
-            qoch();
-        }
-    });
-</script>
+            yoq.style.position = "fixed";
+            yoq.style.left = x + "px";
+            yoq.style.top = y + "px";
+        });
+    </script>
 
 </body>
+
 </html>
