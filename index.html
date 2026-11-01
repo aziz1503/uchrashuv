@@ -20,19 +20,29 @@
 
     </div>
 
-    <script>
-        const yoq = document.getElementById("yoq");
+  
+<script>
+    const yoq = document.getElementById("yoq");
 
-        yoq.addEventListener("mouseover", function () {
+    function qoch() {
+    const maxX = Math.max(0, window.innerWidth - yoq.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - yoq.offsetHeight);
 
-            const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
-            const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
 
-            yoq.style.position = "fixed";
-            yoq.style.left = x + "px";
-            yoq.style.top = y + "px";
-        });
-    </script>
+        yoq.style.position = "fixed";
+        yoq.style.left = x + "px";
+        yoq.style.top = y + "px";
+    }
+
+    yoq.addEventListener("pointerenter", qoch);
+    yoq.addEventListener("touchstart", function(event) {
+        event.preventDefault();
+        qoch();
+    });
+</script>
+
 
 </body>
 
