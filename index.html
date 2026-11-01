@@ -14,18 +14,31 @@
         <button class="yoq" id="yoq">Yoq</button>
     </div>
 
- <script>
-        const yoq = document.getElementById("yoq");
+<script>
+    const yoq = document.getElementById("yoq");
 
-        yoq.addEventListener("mouseover", function() {
-            const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
-            const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
+    function qoch() {
+        const x = Math.random() * (window.innerWidth - yoq.offsetWidth);
+        const y = Math.random() * (window.innerHeight - yoq.offsetHeight);
 
-            yoq.style.position = "fixed";
-            yoq.style.left = x + "px";
-            yoq.style.top = y + "px";
-        });
-    </script>
+        yoq.style.position = "fixed";
+        yoq.style.left = x + "px";
+        yoq.style.top = y + "px";
+    }
+
+    yoq.addEventListener("pointerdown", function(e) {
+        if (e.pointerType === "touch") {
+            e.preventDefault();
+            qoch();
+        }
+    });
+
+    yoq.addEventListener("pointerenter", function(e) {
+        if (e.pointerType === "mouse") {
+            qoch();
+        }
+    });
+</script>
 
 </body>
 </html>
